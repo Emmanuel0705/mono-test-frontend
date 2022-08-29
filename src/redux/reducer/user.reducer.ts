@@ -4,7 +4,6 @@ const INITIAL_STATE = {
 };
 
 const userReducer = (state = INITIAL_STATE, action: any) => {
-    console.log({ payload: action.payload });
     switch (action.type) {
         case STORE_USER_DATA:
             return { ...state, user: { ...action.payload } };

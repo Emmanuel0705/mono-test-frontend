@@ -1,7 +1,8 @@
 import axios from "axios";
-const URL = "https://mono-test-server.herokuapp.com/api";
+import CONSTANT from "../constants";
+
+const URL = CONSTANT.BASE_URL;
 export const LinkAccount = async (payload: any) => {
-    console.log(payload);
     try {
         const token = window.localStorage.getItem("token");
         const res = await axios.post(`${URL}/accounts/link`, payload, {

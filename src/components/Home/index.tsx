@@ -16,10 +16,9 @@ import Navigation from "./Navigation";
 import Transaction from "./Transactions";
 import Balance from "./Balance";
 import LinkAcc from "./LinkAccount";
+import CONSTANT from "../../constants";
 
 const Home = () => {
-    const token = window.localStorage.getItem("token");
-    console.log(token);
     //state hooks
     const [reload, setReload] = useState(false);
     const [UNLINK, setUnlink] = useState<boolean>(false);
@@ -35,8 +34,6 @@ const Home = () => {
     const accounts = useSelector((state: any) => state.accounts).accounts;
     const trx = useSelector((state: any) => state.trx).trx;
 
-    console.log();
-
     useEffect(() => {
         if (!user._id) history.push("/login");
         ((async) => {
@@ -50,7 +47,6 @@ const Home = () => {
     const handleFetchData = async () => {
         setLoading(true);
         const acct = await getAccounts();
-        console.log({ acct });
         dispatch<any>(storeAccount(acct.accounts));
         if (acct?.accounts?.length) {
             const res = await getTrx(acct.accounts[0].accountId);
@@ -62,7 +58,7 @@ const Home = () => {
 
     const handleConnect = () => {
         const connect = new Connect({
-            key: "test_pk_eo2l3Ks50ry7J4Jr2IzN",
+            key: CONSTANT.MONO_PK,
             onSuccess: async (data: any) => {
                 setLoading(true);
                 await LinkAccount({ code: data.code });
@@ -78,8 +74,6 @@ const Home = () => {
         setConfirm(false);
         // setLoading(true);
         const data = await deleteUser();
-
-        console.log({ data });
 
         if (data.success) {
             window.localStorage.removeItem("token");
