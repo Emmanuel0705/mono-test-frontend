@@ -82,6 +82,7 @@ const SignIn = () => {
                             id="email"
                             placeholder="Email"
                             onChange={(e) => handleChange(e)}
+                            required
                         />
                     </div>
                     <div className="w-full py-4">
@@ -92,6 +93,8 @@ const SignIn = () => {
                             name="password"
                             id="password"
                             placeholder="Password"
+                            required
+                            minLength={4}
                         />
                     </div>
 

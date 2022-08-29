@@ -67,6 +67,7 @@ const SignUp = () => {
                                 placeholder="Jane"
                                 onChange={(e) => handleChange(e)}
                                 name="firstName"
+                                required
                             />
                         </div>
                         <div className="w-full sm:w-1/2 px-3">
@@ -77,6 +78,7 @@ const SignUp = () => {
                                 placeholder="Doe"
                                 onChange={(e) => handleChange(e)}
                                 name="lastName"
+                                required
                             />
                         </div>
                     </div>
@@ -88,6 +90,7 @@ const SignUp = () => {
                             onChange={(e) => handleChange(e)}
                             id="email"
                             placeholder="Email"
+                            required
                         />
                     </div>
                     <div className="w-full py-4">
@@ -98,6 +101,8 @@ const SignUp = () => {
                             id="password"
                             placeholder="Password"
                             onChange={(e) => handleChange(e)}
+                            required
+                            minLength={5}
                         />
                     </div>
 
