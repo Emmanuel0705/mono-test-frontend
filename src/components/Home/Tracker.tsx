@@ -11,7 +11,7 @@ const Tracker = () => {
         return (
             <div
                 style={{ height: `${height}px` }}
-                className={`w-4 sm:w-6 md:w-6 lg:w-5 2xl:w-8  bg-[#157AFF] ${
+                className={`w-4 sm:w-6 md:w-6 lg:w-6 2xl:w-7  bg-[#157AFF] ${
                     height < 200 ? "bg-[#9DC8ff] opacity-20" : " bg-[#157AFF]"
                 } `}
             ></div>

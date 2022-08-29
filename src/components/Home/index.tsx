@@ -119,12 +119,12 @@ const Home = () => {
                 {accounts?.length && (
                     <div
                         id="main-content"
-                        className="h-full w-full marker:relative overflow-y-auto lg:ml-[248px]"
+                        className="h-full pl-8 w-full marker:relative overflow-y-auto lg:ml-[248px]"
                     >
                         <main>
                             <div className="px-4">
                                 <div className="w-full grid grid-cols-1 lg:grid-cols-9  ">
-                                    <div className="bg-white mt-8  col-span-5">
+                                    <div className="bg-white mt-8 mr-10 col-span-5 ">
                                         <Navigation user={user} />
                                         <Tracker />
                                         <Transaction trx={trx} />
