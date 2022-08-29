@@ -40,6 +40,7 @@ const SignIn = () => {
                 handleError(data.message);
                 return;
             }
+
             window.localStorage.setItem("token", data.data?.token);
 
             dispatch<any>(storeData({ ...data.data?.user }));

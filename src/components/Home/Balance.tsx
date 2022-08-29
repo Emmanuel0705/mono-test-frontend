@@ -22,7 +22,7 @@ const Balance = (props: any) => {
         accounts.forEach((el: any) => {
             bal = el.balance + bal;
         });
-        return bal;
+        return bal / 100;
     };
     return (
         <div className="bg-white flex flex-col col-span-4 xl:px-10 pt-16 items-center  ">

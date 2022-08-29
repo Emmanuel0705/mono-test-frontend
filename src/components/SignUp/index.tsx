@@ -41,7 +41,7 @@ const SignUp = () => {
     return (
         <div className="h-screen flex items-center justify-center p-2 md:px-32 lg:px-52 bg-[#101010]">
             {loading && <Loader />}
-            <div className="flex flex-col pb-6 py-4 p-4 w-5/6 sm:w-4/6 xl:w-3/6  sm:px-4 sm:pb-6 sm:py-4 h-auto justify-center items-center rounded-2xl  bg-[#FFFFFF]">
+            <div className="flex flex-col max-w-lg pb-6 py-6 lg:px-10 p-4 w-5/6 sm:w-4/6 xl:w-3/6  sm:px-4 sm:pb-6 sm:py-4 h-auto justify-center items-center rounded-2xl  bg-[#FFFFFF]">
                 {error && <ERRORMSG message={error} />}
                 <div className="flex flex-col gap-4 p-12 items-center justify-center">
                     <img
@@ -118,7 +118,7 @@ const SignUp = () => {
                             Already have an account?
                             <span className="cursor-pointer text-xs font-light text-[#182CD1] underline">
                                 {" "}
-                                <Link to="/register"> Sign in</Link>
+                                <Link to="/login"> Sign in</Link>
                             </span>
                         </p>
                     </div>

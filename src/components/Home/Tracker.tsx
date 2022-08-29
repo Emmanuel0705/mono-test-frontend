@@ -2,8 +2,21 @@
 
 const Tracker = () => {
     const expensesHeight = [
-        5, 4, 5, 5, 3, 5, 3, 3, 5, 3, 5, 5, 2, 5, 3, 5, 3, 2, 5, 9, 5,
+        70, 110, 130, 70, 120, 70, 110, 70, 100, 110, 90, 120, 100, 120, 110,
+        100, 80, 100, 110, 200, 90,
     ];
+
+    const Line = (props: any) => {
+        const { height } = props;
+        return (
+            <div
+                style={{ height: `${height}px` }}
+                className={`w-4 sm:w-6 md:w-6 lg:w-5 2xl:w-8  bg-[#157AFF] ${
+                    height < 200 ? "bg-[#9DC8ff] opacity-20" : " bg-[#157AFF]"
+                } `}
+            ></div>
+        );
+    };
 
     return (
         <div className="py-8">
@@ -16,15 +29,7 @@ const Tracker = () => {
             >
                 {expensesHeight.map((height) => (
                     <div className=" relative">
-                        <div
-                            className={`w-4 sm:w-6 md:w-6 lg:w-5 2xl:w-8  h-${
-                                height * 4
-                            } ${
-                                height < 9
-                                    ? "bg-[#9DC8ff] opacity-20"
-                                    : " bg-[#157AFF]"
-                            }`}
-                        ></div>
+                        <Line height={height} />
                     </div>
                 ))}
             </div>
